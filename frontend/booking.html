@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Navadiya Dental Clinic</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .booking-container {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-form-card {
+            background: var(--framer-bg-main);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--framer-bg-secondary);
+        }
+
+        .booking-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .booking-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            color: var(--framer-text-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            background: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--framer-text-color);
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--framer-accent);
+            box-shadow: 0 0 0 4px rgba(161, 128, 110, 0.1);
+        }
+
+        .btn-booking {
+            width: 100%;
+            background: var(--framer-text-color);
+            color: var(--framer-bg-main);
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: 10px;
+        }
+
+        .btn-booking:hover {
+            background: #CA8A04;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .booking-form-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Elaravos Style Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="index.html" class="nav-brand">
+                <i class="fa-solid fa-tooth"></i> Navadiya
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-menu">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="team.html">Team</a>
+                    <a href="services.html">Method</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a href="booking.html" class="nav-btn">Book appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="container padding-top-hero" style="min-height: auto; padding-top: 180px;">
+        <div class="fade-up active text-center">
+            <span class="hero-tag">Reservations</span>
+            <h1 style="margin-top:20px; font-size:4rem;">Book Your <span class="text-italic"
+                    style="color: var(--framer-accent);">Visit</span></h1>
+            <p style="margin: 20px auto 0;">Take the first step towards a healthier, more radiant smile. Select your
+                preferred date and time below.</p>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="container">
+        <div class="booking-container fade-up">
+            <div class="booking-form-card">
+                <form action="#" method="POST"
+                    onsubmit="event.preventDefault(); alert('Appointment request sent! We will contact you shortly to confirm.'); window.location.href='index.html';">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="checkup">General Checkup</option>
+                                <option value="cleaning">Teeth Cleaning</option>
+                                <option value="implant">Dental Implants</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="rct">Root Canal Treatment</option>
+                                <option value="invisalign">Invisalign</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time Slot</label>
+                            <select id="time" name="time" required>
+                                <option value="" disabled selected>Select a time</option>
+                                <option value="morning">Morning (10:00 AM - 01:00 PM)</option>
+                                <option value="afternoon">Afternoon (02:00 PM - 05:00 PM)</option>
+                                <option value="evening">Evening (06:00 PM - 09:00 PM)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor">Preferred Doctor (Optional)</label>
+                            <select id="doctor" name="doctor">
+                                <option value="any">Any Available</option>
+                                <option value="jatin">Dr. Jatin Navadia</option>
+                                <option value="archita">Dr. Archita Navadia</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes" rows="4"
+                                placeholder="Mention any specific concerns or medical history..."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-booking">Confirm Booking Request</button>
+                    <p style="margin-top:20px; font-size: 0.9rem; text-align: center; color: rgba(234,179,8,0.6);">
+                        Our team will call you within 2-4 business hours to finalize the time.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elaravos Style Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <h2 class="footer-top">Start your journey to a<br><span class="text-italic"
+                    style="color:var(--framer-accent)">healthier smile</span> today.</h2>
+
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 20px;">
+                        <i class="fa-solid fa-tooth"></i> Navadiya
+                    </a>
+                    <p style="max-width: 300px;">Navadia Multispeciality Dental Clinic is dedicated to providing
+                        high-quality dental services with a focus on patient care and hygiene.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html" style="margin-bottom: 8px;">Home</a>
+                    <a href="about.html" style="margin-bottom: 8px;">About Us</a>
+                    <a href="services.html" style="margin-bottom: 8px;">Services</a>
+                    <a href="team.html" style="margin-bottom: 8px;">Team</a>
+                    <a href="booking.html" style="margin-bottom: 8px;">Book Appointment</a>
+                    <a href="contact.html" style="margin-bottom: 8px;">Contact Us</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Working Hours</h4>
+                    <p>Monday - Saturday<br>09:30 AM - 09:30 PM</p>
+                    <p style="color: var(--framer-accent);">Sunday: 09:30 AM – 02:00 PM</p>
+
+                    <h4 style="margin-top: 30px;">Locate Us</h4>
+                    <p>304, Sunshine Plaza,<br>Katargam, Surat, Gujarat</p>
+                    <a href="tel:+919427968553">+91 94279 68553</a>
+
+                    <h4 style="margin-top: 30px;">Connect With Us</h4>
+                    <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 10px;">
+                        <a href="https://www.facebook.com/Navadiadentalclinic/" target="_blank"
+                            style="color: var(--framer-text-color);"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/navadiadentalclinic/" target="_blank"
+                            style="color: var(--framer-text-color);"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to handle scroll animations and chatbot -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-up, .fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Set minimum date to today
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+        });
+    </script>
+</body>
+
+</html>
